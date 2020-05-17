@@ -20,15 +20,15 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-	console.log('Mounted successfully');
+	Window.alert('Mounted successfully');
     gapi.load('client', this.initClient);
   };
   
   initClient = () => {
-	console.log('Loading Google Spreadsheet API...');
-	console.log('API key: '+config.apiKey);
-	console.log('Discovery docs: '+config.discoveryDocs);
-	console.log('Client ID: '+config.clientId);
+	Window.alert('Loading Google Spreadsheet API...');
+	Window.alert('API key: '+config.apiKey);
+	Window.alert('Discovery docs: '+config.discoveryDocs);
+	Window.alert('Client ID: '+config.clientId);
 	
 	  
     gapi.client.init({
@@ -37,7 +37,7 @@ class App extends React.Component {
       clientId: config.clientId,
       scope: "https://www.googleapis.com/auth/spreadsheets.readonly"
     }).then(() => {
-		console.log('Loaded successfully');
+		Window.alert('Loaded successfully');
 		
       loadGasp(this.setGasp);
       loadStrings(this.setStrings);
