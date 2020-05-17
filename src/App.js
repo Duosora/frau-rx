@@ -24,12 +24,20 @@ class App extends React.Component {
   };
   
   initClient = () => {
+	console.log('Loading Google Spreadsheet API...');
+	console.log('API key: '+config.apiKey);
+	console.log('Discovery docs: '+config.discoveryDocs);
+	console.log('Client ID: '+config.clientId);
+	
+	  
     gapi.client.init({
       apiKey: config.apiKey,
       discoveryDocs: config.discoveryDocs,
       clientId: config.clientId,
       scope: "https://www.googleapis.com/auth/spreadsheets.readonly"
     }).then(() => {
+		console.log('Loaded successfully');
+		
       loadGasp(this.setGasp);
       loadStrings(this.setStrings);
     }, response => console.log(response));
