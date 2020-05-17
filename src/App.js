@@ -4,7 +4,7 @@ import './react-tabs.css';
 import './App.css';
 //import Gasp from './Gasp';
 import config from './utils/config';
-import { gapi } from 'gapi-script';
+//import { gapi } from 'gapi-script';
 
 //import { loadGasp, loadStrings } from './utils/sheet';
 
@@ -20,7 +20,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    gapi.load('client', this.initClient);
+    //gapi.load('client', this.initClient);
   };
   
   initClient = () => {
