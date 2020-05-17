@@ -2,7 +2,7 @@
   "name": "frau-rx",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://koucaco.github.io/frau-rx",
+  "homepage": "http://duosora.github.io/frau-rx",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
