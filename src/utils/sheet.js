@@ -37,35 +37,6 @@ export function loadGasp(callback) {
       }, 
     response => error(callback, response))
   })};
-  
-  
-export function loadCape(callback) {
-  gapi.client.load("sheets", "v4", () => {
-    let values = gapi.client.sheets.spreadsheets.values;
-    let output = {filters: {}};
-    values
-      .get({
-        spreadsheetId: config.capeSheetId,
-        range: "all keywords!A1:F100",
-        majorDimension: "COLUMNS"
-      })
-      .then(
-        response => {
-          mapHeaders(response.result.values, output.filters);
-          values.get({
-            spreadsheetId: config.capeSheetId,
-            range: "masterlist!A1:g"
-          })
-          .then(
-            response => {
-              output.users = response.result.values;
-              callback(output);
-            },
-            response => error(callback, response));
-      },
-        response => error(callback, response));
-  });
-};
     
 export function loadStrings(callback) {
   gapi.client.load("sheets", "v4", () => {

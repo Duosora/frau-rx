@@ -3,11 +3,10 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './react-tabs.css';
 import './App.css';
 import Gasp from './Gasp';
-import Cape from './Cape';
 import config from './utils/config';
 import { gapi } from 'gapi-script';
 
-import { loadGasp, loadCape, loadStrings } from './utils/sheet';
+import { loadGasp, loadStrings } from './utils/sheet';
 
 
 
@@ -17,7 +16,6 @@ class App extends React.Component {
     super();
     this.state = {
       gasp: null,
-      cape: null,
       strings: null
     }
   }
@@ -33,7 +31,6 @@ class App extends React.Component {
       scope: "https://www.googleapis.com/auth/spreadsheets.readonly"
     }).then(() => {
       loadGasp(this.setGasp);
-      loadCape(this.setCape);
       loadStrings(this.setStrings);
     }, response => console.log(response));
   }
@@ -45,14 +42,6 @@ class App extends React.Component {
     }
     else {
       this.setState({gasp: data});
-    }
-  };
-  setCape = (data, error) => {
-    if(error) {
-      console.log(error);
-    }
-    else {
-      this.setState({cape: data});
     }
   };
   setStrings = (data, error) => {
@@ -69,7 +58,6 @@ class App extends React.Component {
         <Tabs>
           <TabList>
             <Tab>GASP</Tab>
-            {/* <Tab className="react-tabs__tab--disabled">CAPE</Tab> */}
           </TabList>
           <TabPanel>
             <Gasp sheet={this.state.gasp} strings={this.state.strings} />
