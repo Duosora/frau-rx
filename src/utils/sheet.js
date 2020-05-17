@@ -16,7 +16,7 @@ export function loadGasp(callback) {
           mapHeaders(response.result.values, output.filters);
           values.get({
             spreadsheetId: config.gaspSheetId,
-            range: "master list!A1:e"
+            range: "masterlist!A1:e"
           })
           .then(
             response => {
