@@ -20,6 +20,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+	  console.log('Mounted successfully');
     gapi.load('client', this.initClient);
   };
   
