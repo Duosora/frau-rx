@@ -74,9 +74,6 @@ class App extends React.Component {
           <TabPanel>
             <Gasp sheet={this.state.gasp} strings={this.state.strings} />
           </TabPanel>
-          <TabPanel>
-            <Cape sheet={this.state.cape} strings={this.state.strings} />
-          </TabPanel>
         </Tabs>
       </div>;
   }
