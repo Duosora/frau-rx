@@ -18,7 +18,7 @@ class App extends React.Component {
       gasp: null,
       strings: null
     }
-	console.log('constructed!');
+	alert('constructed!');
   }
   componentDidMount() {
 	console.log('Mounted successfully');
