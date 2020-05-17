@@ -24,7 +24,8 @@ class App extends React.Component {
   };
   
   initClient = () => {
-    gapi.client.init({
+	  console.log('inits');
+    /*gapi.client.init({
       apiKey: config.apiKey,
       discoveryDocs: config.discoveryDocs,
       clientId: config.clientId,
@@ -32,7 +33,7 @@ class App extends React.Component {
     }).then(() => {
       //loadGasp(this.setGasp);
       //loadStrings(this.setStrings);
-    }, response => console.log(response));
+    }, response => console.log(response)); */
   }
 
 /*
