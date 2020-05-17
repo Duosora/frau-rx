@@ -35,6 +35,7 @@ class App extends React.Component {
     }, response => console.log(response));
   }
 
+/*
   setGasp = (data, error) => {
     console.log(error);
     if(error) {
@@ -52,6 +53,7 @@ class App extends React.Component {
       this.setState({strings: data});
     }
   };
+  */
 
   render() {
     return <div className="App">
