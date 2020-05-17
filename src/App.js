@@ -2,11 +2,11 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './react-tabs.css';
 import './App.css';
-import Gasp from './Gasp';
+//import Gasp from './Gasp';
 import config from './utils/config';
 import { gapi } from 'gapi-script';
 
-import { loadGasp, loadStrings } from './utils/sheet';
+//import { loadGasp, loadStrings } from './utils/sheet';
 
 
 
@@ -20,27 +20,18 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-	Window.alert('Mounted successfully');
     gapi.load('client', this.initClient);
   };
   
   initClient = () => {
-	Window.alert('Loading Google Spreadsheet API...');
-	Window.alert('API key: '+config.apiKey);
-	Window.alert('Discovery docs: '+config.discoveryDocs);
-	Window.alert('Client ID: '+config.clientId);
-	
-	  
     gapi.client.init({
       apiKey: config.apiKey,
       discoveryDocs: config.discoveryDocs,
       clientId: config.clientId,
       scope: "https://www.googleapis.com/auth/spreadsheets.readonly"
     }).then(() => {
-		Window.alert('Loaded successfully');
-		
-      loadGasp(this.setGasp);
-      loadStrings(this.setStrings);
+      //loadGasp(this.setGasp);
+      //loadStrings(this.setStrings);
     }, response => console.log(response));
   }
 
@@ -69,7 +60,8 @@ class App extends React.Component {
             <Tab>GASP</Tab>
           </TabList>
           <TabPanel>
-            <Gasp sheet={this.state.gasp} strings={this.state.strings} />
+			<div>hello</div>
+            //<Gasp sheet={this.state.gasp} strings={this.state.strings} />
           </TabPanel>
         </Tabs>
       </div>;
